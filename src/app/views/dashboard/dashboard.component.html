@@ -1,0 +1,328 @@
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://firebasestorage.googleapis.com/v0/b/conversordivisas-b80f3.appspot.com/o/img%2FJR-AA219_FITIME_M_20190920144614-1.jpg?alt=media&token=92c7c5fb-ac3e-4422-b7f2-ad528003363f" alt="Dinero" width="100%" height="250">
+    </div>
+    <div class="carousel-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/conversordivisas-b80f3.appspot.com/o/img%2Fheader_money.jpg?alt=media&token=59eefe0e-03a4-4a31-bafe-86a8ea3aaa35" alt="Dinero" width="100%" height="250">
+    </div>
+    <div class="carousel-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/conversordivisas-b80f3.appspot.com/o/img%2Fshutterstock-367050494.jpg?alt=media&token=21aada97-008e-4b8c-8785-3dcd6338be52" alt="Dinero" width="100%" height="250">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+  <div id="in1" class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-14 px-0">
+      <h1 class="display-4 font-italic">Como funciona</h1>
+      <p class="lead my-3">Selecciona el tipo de moneda que deseas convertir y selecciona el tipo de moneda que deseas
+        obtener. Presiona click  sobre “Convertir”.</p>
+      <div class="Menuconvert">
+        <!--Menu para los input y seleccion de la conversion-->
+        <form id="formulario">
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <h5>Tengo esta divisa:</h5>
+              <select class="form-control fa" id="txtmoneda1">
+                <option>Seleccione una opción</option>
+                <option class='fa'>&#xf155;US Dólar</option>
+                
+                <option class='fa'>&#xf153;Euro</option>
+                <option class="fa">&#xf154; Libra esterlina</option>
+                <option class='fa'>&#xf43; Franco suizo</option>
+                <option class='fa'>&#xf157; Yen japonés</option>
+                <option class='fa'>&#xf155; Dólar hongkonés</option>
+                <option class='fa'>&#xf155; Dólar canadiense</option>
+                <option class='fa'>&#xf157; Yuan chino</option>
+                <option class='fa'>&#xf155; Dólar australiano</option>
+                <option class='fa'>&#xf155; Real brasileño</option>
+                <option class='fa'>&#xf158; Rublo ruso</option>
+                <option class='fa'>&#xf155; Peso mexicano</option>
+              </select>
+              <br>
+              <h5>Importe:</h5>
+              <input style="color: red" id="importe1.txt" class="form-control mr-sm-2" type="number" placeholder="Importe" min="0" step="0.001" oninput="validity.valid||(value='');">
+              
+              <br>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <br><br>
+              <button id="convertirvalor" style="margin-left: 30%; width: 100px; height: 60px;" type="button" class="btn btn-outline-secondary" onclick="operar()">Convertir</button>
+              <br><br><br><br>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h5>Quiero esta divisa:</h5>
+              <select class="form-control fa" id="txtmoneda2">
+                <option>Seleccione una opción</option>
+                <option class='fa'>&#xf155;US Dólar</option>
+                
+                <option class='fa'>&#xf153;Euro</option>
+                <option class="fa">&#xf154; Libra esterlina</option>
+                <option class='fa'>&#xf43; Franco suizo</option>
+                <option class='fa'>&#xf157; Yen japonés</option>
+                <option class='fa'>&#xf155; Dólar hongkonés</option>
+                <option class='fa'>&#xf155; Dólar canadiense</option>
+                <option class='fa'>&#xf157; Yuan chino</option>
+                <option class='fa'>&#xf155; Dólar australiano</option>
+                <option class='fa'>&#xf155; Real brasileño</option>
+                <option class='fa'>&#xf158; Rublo ruso</option>
+                <option class='fa'>&#xf155; Peso mexicano</option>
+              </select>
+
+              <br>
+               
+              <h5>Importe:</h5>
+              <input style="color: red;" id="importe2.txt" class="form-control mr-sm-2" type="number" placeholder="Importe" min="0" step="0.001" oninput="validity.valid||(value='');">
+              
+            </div>
+            
+          </div>
+         
+          </form>
+          
+
+          <!---->
+      </div>
+      
+
+    </div>
+    </div>
+    <div>
+       <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <h3 class="pb-4 mb-4 font-italic border-bottom">Conversiones recientes</h3>
+      
+            <table style="margin-left: 20px;
+            margin-right: 20px;   border: 1px solid black;" class="table" id="lista">
+              <thead>
+                <tr>
+                  <th scope="col"><h4>Moneda de Entrada</h4></th>
+                  <th scope="col"><h4>Moneda de Salida</h4></th>
+                </tr>
+              </thead>
+            </table>
+      
+    
+          <h3 class="pb-4 mb-4 font-italic border-bottom">
+            Todas las conversiones disponibles
+          </h3>
+          <div class="row">
+            <div class="col Ci"> <span class="flag-icon flag-icon-eu imgRedo"></span><p>EUR- Euro</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-jp imgRedo"></span><p>Yan- Japones</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-us imgRedo"></span><p>USD- Dolar Estadounidense</p>  </div>
+          </div>
+          
+          <div class="row">
+            <div class="col Ci"> <span class="flag-icon flag-icon-gb imgRedo"></span><p>GBP- Libra esterlina</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-mx imgRedo"></span><p>MXN- Peso Mexicano</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-ru imgRedo"></span><p>RUB- Rublo ruso</p>  </div>
+          </div>
+          <div class="row">
+            <div class="col Ci"> <span class="flag-icon flag-icon-cn imgRedo"></span><p>CNY- Yuan chino</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-br imgRedo"></span><p>BRL- Real brasileño</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-ca imgRedo"></span><p>CAD- Dólar canadiense</p>  </div>
+          </div>
+          <div class="row">
+            <div class="col Ci"> <span class="flag-icon flag-icon-ch imgRedo"></span><p>SFr- Franco suizo</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-hk imgRedo"></span><p>HKD- Dólar hongkonés</p>  </div>
+            <div class="col Ci"> <span class="flag-icon flag-icon-au imgRedo"></span><p>AUD- Dólar australiano</p>  </div>
+          </div>
+          <div class="blog-post">
+            <h2 class="blog-post-title">Conversor de Divisas</h2>
+            <p class="blog-post-meta">Monday 9, 2020 by <a href="#">Manuel, Santos, Steven</a></p>
+    
+            <p>Nuestro conversor de moneda te permite conocer el valor del euro, el valor del dolar, el valor de la libra esterlina, el peso mexicano, peso argentino y muchas más, incluidas las monedas del resto de países de habla hispana..</p>
+            <hr>
+            <p>Para convertir una moneda en otra, se debe introducir una cantidad de dinero  <strong>(por ejemplo “1000”)</strong> y elegir la moneda que se quiere cambiar  <strong>(por ejemplo “Euro”).</strong></p>
+            <blockquote>
+            <p>Después, seleccionar la moneda en la que se desea conocer el valor de la otra <strong>(por ejemplo “Dólar estadounidense”).</strong> El conversor de monedas calculará cuánto vale la cantidad puesta de la primera moneda en precios de la segunda.</p>
+            </blockquote>
+            <p>Por ejemplo si hemos puesto 1000 euros a dólares nos dirá cuántos dólares son 1000 euros.</p>
+            <h3>¿Para qué sirven los conversores de monedas?</h3>
+            <p>Un conversor de divisas ofrece información en tiempo real del <a href="#">tipo de cambio</a> actual del mercado, de manera que el resultado obtenido nos ofrece el valor de una <a href="#">divisas</a>con respecto a otra divisa.</p>
+            <p><strong>Valor de mercado de las divisas es muy útil para:</strong></p>
+            <ul>
+              <li>Estimar el valor de los bienes o servicios en otra divisa.</li>
+              <li>Contabilidad básica y facturación.</li>
+              <li>Preparación de planes e informes financieros.</li>
+            </ul>
+            <p><strong>Valor de la moneda fluctúa constantemente y es afectado por una variedad de factores diferentes, incluyendo:</strong></p>
+            <ol>
+              <li>Políticas monetarias del banco central.</li>
+              <li>La inflación relativa con el otro país.</li>
+              <li>El valor de las importaciones y exportaciones de la nación.</li>
+              <li>La relativa estabilidad política del país.</li>
+              <li>Desastres naturales.</li>
+              <li>Las deudas públicas del país con otros países.</li>
+              <li>La fluctuación de las tasas de inflación del condado.</li>
+            </ol>
+            <h3>¿Qué es el tipo de cambio?</h3>
+            <p>El tipo de cambio o tasa de cambio es la relación entre el valor de una divisa y otra, es decir, nos indica cuantas monedas de una divisa se necesitan para obtener una unidad de otra.</p>
+          </div><!-- /.blog-post -->
+    
+    
+          <nav class="blog-pagination">
+            <a class="btn btn-outline-primary" href="#">Inicio</a>
+            
+          </nav>
+          <br>
+          <br>
+    
+        </div><!-- /.blog-main -->
+    
+        <aside class="col-md-4 blog-sidebar">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="font-italic">Acerca</h4>
+            <p class="mb-0">Un conversor de divisas es un software diseñado para convertir el valor de una moneda en otra moneda, permitiendo conocer el precio de una moneda con respecto a otra. También se conoce como conversor de monedas o convertidor de divisas.</p>
+          </div>
+    
+          <div class="p-4">
+            <h4 class="font-italic">Archivos</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="#">Enero 2020</a></li>
+              <li><a href="#">Febrero 2020</a></li>
+              <li><a href="#">Marzo 2020</a></li>
+              <li><a href="#">Abril 2020</a></li>
+              <li><a href="#">Mayo 2020</a></li>
+              <li><a href="#">Junio 2020</a></li>
+              <li><a href="#">Julio 2020</a></li>
+              <li><a href="#">Agosto 2020</a></li>
+              <li><a href="#">Septiembre 2020</a></li>
+              <li><a href="#">Octubre 2020</a></li>
+              <li><a href="#">Noviembre 2020</a></li>
+              <li><a href="#">Diciembre 2020</a></li>
+            </ol>
+          </div>
+    
+          <div class="p-4">
+            <h4 class="font-italic">Redes Sociales</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ol>
+          </div>
+        </aside><!-- /.blog-sidebar -->
+    
+      </div><!-- /.row -->
+    
+    </main><!-- /.container -->
+    </div>
+    <div>
+      <footer id="foot" class="page-footer font-small mdb-color pt-4 text-white rounded bg-dark">
+        <a name="abfooter"></a>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+      
+          <!-- Grid row -->
+          <div class="row">
+      
+            <!-- Grid column -->
+            <div class="col-md-4 mx-auto">
+      
+              <!-- Content -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Acerca de nosotros:</h5>
+              <p>Desarrolladores:</p>
+              <p>Santos Ronaldo, Lemus Torres</p>
+              <p>Manuel Alberto, Mata Durán</p>
+              <p>Steven Alexis, Gómez Reyes</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+          
+            <hr class="clearfix w-100 d-md-none">
+        
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-4 mx-auto">
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <br>
+                  <a href="mailto:santosronaldolemus@gmail.com">santosronaldolemustorres@gmail.com</a>
+                </li>
+                <li>
+                  <br>
+                  <a href="mailto:mata.duran@gmail.com">mata.duran@gmail.com</a>
+                </li>
+                <li>
+                  <br>
+                  <a href="mailto:stevengo602@gmail.com">stevengo602@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1">Registrarse Gratis</h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="btn btn-danger btn-rounded">Regístrate!</a>
+          </li>
+        </ul>
+        <hr>
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+        
+          <a class="btn-floating btn-fb mx-1">
+            <button type="button" class="btn btn-brand btn-sm btn-facebook mr-1" style="margin-bottom: 4px">
+              <i class="fa fa-facebook"></i>
+              <a style="color: white;" href="https://facebook.com"><span>Facebook</span></a>
+            </button>
+            
+          </a>
+     
+       
+          <a class="btn-floating btn-tw mx-1">
+            <button type="button" class="btn btn-brand btn-sm btn-twitter mr-1" style="margin-bottom: 4px">
+              <i class="fa fa-twitter"></i>
+              <a style="color: white;" href="https://Twitter.com"> <span>Twitter</span></a>
+            </button>
+           
+          </a>
+
+       
+          <button type="button" class="btn btn-brand btn-sm btn-github mr-1" style="margin-bottom: 4px">
+            <i class="fa fa-github"></i>
+            <a style="color: white;" href="https://Github.com"><span>Github</span></a>
+          </button>
+   
+        
+          <a class="btn-floating btn-li mx-1">
+            <button type="button" class="btn btn-brand btn-sm btn-linkedin mr-1" style="margin-bottom: 4px">
+              <i class="fa fa-linkedin"></i>
+              <a style="color: white;" href="https://www.linkedin.com/login/es"><span>LinkedIn</span></a>
+            </button>
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+       
+        
+      </ul>
+        <!-- Social buttons -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="http://www.udb.edu.sv/udb/">Universidad Don Bosco</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
+
+
+
+

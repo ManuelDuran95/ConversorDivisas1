@@ -1,0 +1,35 @@
+.imgRedo {
+    width:50px;
+    height:50px;
+    border-radius:150px;
+}
+.dr1{
+    align-items: center;
+    justify-content: center;
+  
+    
+   
+    display: inline-block;
+
+   
+}
+.line1{
+    font-size: 15px;
+}
+.Fl{
+    float: left;
+}
+.Fr{
+    float: right;
+}
+.Ci{
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ps{
+    font-size: 18px;
+    font-weight: bolder;
+}
